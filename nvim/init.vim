@@ -15,7 +15,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
 
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'godlygeek/tabular'
 Plug 'hynek/vim-python-pep8-indent'
