@@ -29,7 +29,7 @@ height = 27
 background = #1f1f1f
 foreground = #eee
 
-border-bottom = 1
+border-bottom-size = 1
 border-bottom-color = #333
 
 overline-size = 10
@@ -235,7 +235,7 @@ format-foreground = #fff
 date = %%{F#bb}%Y-%m-%d%%{F-}  %%{F#ee}%H:%M%%{F-}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 speaker-mixer = Speaker
 headphone-mixer = Headphone
 headphone-id = 9
