@@ -39,6 +39,7 @@
 
 !! URxvt Appearance
 URxvt*termName:         rxvt
+URxvt.borderless:       true
 
 URxvt.letterSpace:      0
 
