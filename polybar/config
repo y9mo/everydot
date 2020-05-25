@@ -40,6 +40,9 @@ margin-bottom = 0
 fixed-center = true
 override-redirect = true
 
+tray-position = right
+wm-restack = i3
+
 [bar/top]
 locale = en_US.utf8
 width = 100%
