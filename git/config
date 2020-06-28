@@ -1,0 +1,53 @@
+[user]
+    name = Eric Da Silva
+    useConfigOnly = true
+
+[color]
+    ui = auto
+
+[push]
+    default = nothing
+
+[alias]
+    glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --boundary
+    st = status -sb
+    wdiff = diff --word-diff
+    cdiff = diff --cached
+    padd = add -pi
+    changelog = log --pretty=format:'%h - %an, %ar: %s'
+    cancel-commit = reset HEAD^
+    pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+    please = push --force-with-lease
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+    forget = reset HEAD
+    co = checkout
+    ci = commit
+    lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+
+[pull]
+    rebase = true
+
+[core]
+    whitespace = trailing-space
+
+[diff "localizablestrings"]
+    textconv = "iconv -f utf-16 -t utf-8"
+[diff]
+    compactionHeuristic = true
+    renames = copies
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d -u ~/.vimrc \"$LOCAL\" \"$REMOTE\""
+
+[merge]
+    log = true
+    tool = nvim
+    conflictstyle = diff3
+    prompt = false
+    tool = nvim
+[mergetool "nvim"]
+cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
