@@ -194,4 +194,7 @@ bindsym Mod1+r mode "resize"
 
 exec --no-startup-id feh --bg-scale /home/y9mo/Pictures/backgrounds/dizorb_distant.jpg
 
-exec_always --no-startup-id /home/y9mo/.config/polybar/launch.sh
+bar {
+    position top
+    status_command i3status
+}
