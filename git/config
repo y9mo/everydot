@@ -16,7 +16,6 @@
     padd = add -pi
     changelog = log --pretty=format:'%h - %an, %ar: %s'
     cancel-commit = reset HEAD^
-    pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     please = push --force-with-lease
     tags = tag -l
     branches = branch -a
@@ -31,6 +30,7 @@
 
 [core]
     whitespace = trailing-space
+	editor = nvim
 
 [diff "localizablestrings"]
     textconv = "iconv -f utf-16 -t utf-8"
